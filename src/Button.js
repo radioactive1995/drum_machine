@@ -7,7 +7,6 @@ export default function Button({audioString, audioUrl, content, setContent}) {
     useEffect(() => {
         element = document.querySelector(`#${audioString}`)
         element.volume = content.volume/100;
-        console.log(element.volume)
 
         element.addEventListener('ended', endedHandler);
 
@@ -43,6 +42,6 @@ export default function Button({audioString, audioUrl, content, setContent}) {
 
 
     return (
-        <div className="button"><audio src={audioUrl} id={audioString}></audio><button  className='animate' onClick={onClickHandler} id={`button-${audioString}`}>{audioString}</button></div>
+        <div className="button"><button  className='animate drum-pad' onClick={onClickHandler} id={`button-${audioString}`}>{audioString}<audio className='clip' src={audioUrl} id={audioString}></audio></button></div>
     )
 }

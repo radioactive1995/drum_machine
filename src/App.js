@@ -109,11 +109,11 @@ const handleToggle = (event) => {
 }
 
   return (
-    <div className="App">
+    <div className="App" id="drum-machine">
       {buttons.map(button => <Button  audioString={button.audioString} audioUrl={button.audioUrl} content={content} setContent={setContent} />)}
       <div className="view-port">
         <input className='slider' type='range' min='0' max='100' onChange={handleSlider} style={cssStyle} />
-        <div className='content'><p className='volume'>Volume: {content.volume}</p><p className='textArea'>{content.textPlaying}</p>
+        <div className='content' id='display'><p className='volume'>Volume: {content.volume}</p><p className='textArea'>{content.textPlaying}</p>
         <p className='soundText'>Sound {content.toggleText}</p>
         </div>
         <input type='checkbox' className='toggle-mute' onClick={handleToggle} 
