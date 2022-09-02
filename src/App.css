@@ -1,38 +1,110 @@
 .App {
-  text-align: center;
+  width: 500px;
+  height: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 20% 20% 20% 37.5%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.view-port {
+  grid-column: span 3;
+  border: 3px black solid;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: auto;
+  background: rgb(6, 26, 116, 0.6);
 }
 
-.App-link {
-  color: #61dafb;
+.view-port .slider {
+  height: 5%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin: 0;
+  margin-top: 2%;
+  width: 98%;
+  border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.view-port .slider::-moz-range-thumb {
+  padding: 5px;
+  border: 5px rgba(24, 147, 218, 0.6) solid;
 }
+
+.view-port .content {
+  margin-top: 3%;
+  width: 98%;
+  height: 150px;
+  background: rgb(168, 161, 161);
+  border-radius: 5px;
+  position: relative;
+}
+
+.view-port .volume {
+  margin-top: 0.4%;
+  margin-left: 0.4%;
+  font-size: 0.7em;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.view-port .textArea {
+  text-align: center;
+  font-size: 1.7em;
+  margin: 0;
+}
+
+.view-port .textArea .big {
+  font-size: 3em;
+}
+
+.view-port .soundText {
+  position: absolute;
+  text-align: left;
+  margin-left: 0.4%;
+  font-size: 0.7em;
+  top: 80%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
+.toggle-mute {
+  position: relative;
+  margin-top: 1.15%;
+  -moz-appearance: none;  
+  -webkit-appearance: none;
+  appearance: none;
+  width: 55px;
+  height: 25px;
+  background: rgba(24, 147, 218, 0.6);
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.toggle-mute:checked {
+  background: rgb(168, 161, 161);
+}
+
+.toggle-mute::before {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  right: 0;
+  bottom: 0;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background: rgb(168, 161, 161);
+  content: '';
+  transition: all 0.1s linear;
+}
+
+.toggle-mute:checked::before {
+  background: rgba(24, 147, 218, 0.6);
+  transform: translateX(-30px);
+}
+
+.toggle-switch {}
